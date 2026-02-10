@@ -15,6 +15,7 @@ export function BirthdayScreen({ visible, name }: BirthdayScreenProps) {
   const [showPhoto, setShowPhoto] = useState(false)
   const [showMessage, setShowMessage] = useState(false)
   const audioRef = useRef<HTMLAudioElement>(null)
+  const ytRef = useRef<HTMLIFrameElement | null>(null) // ✅ TAMBAHAN INI
   const fullText = `Selamat Ulang Tahun Bebbb kuuu!`
 
   useEffect(() => {
@@ -127,15 +128,29 @@ Bela...
         </p>
       </div>
 
-   <iframe
-  id="yt-auto"
+   {/* Tombol Putar Musik YouTube */}
+<button
+  onClick={() => {
+    if (!ytRef.current) return
+
+    ytRef.current.src =
+      "https://www.youtube.com/embed/LjhCEhWiKXk?autoplay=1&loop=1&playlist=LjhCEhWiKXk"
+  }}
+  className="mt-6 rounded-full bg-pink-500 px-6 py-3 text-white"
+>
+  ▶ Putar Musik
+</button>
+
+{/* YouTube audio (hidden) */}
+<iframe
+  ref={ytRef}
   title="Just The Way You Are - Bruno Mars"
   width="1"
   height="1"
   style={{ opacity: 0, position: "absolute", pointerEvents: "none" }}
   allow="autoplay; encrypted-media"
-  src="https://www.youtube.com/embed/LjhCEhWiKXk?autoplay=1&mute=1&loop=1&playlist=LjhCEhWiKXk"
 />
+
     </div>
   )
 }
