@@ -128,28 +128,13 @@ Bela...
         </p>
       </div>
 
-   {/* Tombol Putar Musik YouTube */}
-<button
-  onClick={() => {
-    if (!ytRef.current) return
-
-    ytRef.current.src =
-      "https://www.youtube.com/embed/LjhCEhWiKXk?autoplay=1&loop=1&playlist=LjhCEhWiKXk"
-  }}
-  className="mt-6 rounded-full bg-pink-500 px-6 py-3 text-white"
->
-  ▶ Putar Musik
-</button>
-
-{/* YouTube audio (hidden) */}
-<iframe
-  ref={ytRef}
-  title="Just The Way You Are - Bruno Mars"
-  width="1"
-  height="1"
-  style={{ opacity: 0, position: "absolute", pointerEvents: "none" }}
-  allow="autoplay; encrypted-media"
+<audio
+  ref={audioRef}
+  src="bruno.mp3"
+  loop
+  preload="auto"
 />
+
 
     </div>
   )
