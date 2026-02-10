@@ -15,7 +15,7 @@ export function BirthdayScreen({ visible, name }: BirthdayScreenProps) {
   const [showPhoto, setShowPhoto] = useState(false)
   const [showMessage, setShowMessage] = useState(false)
   const audioRef = useRef<HTMLAudioElement>(null)
-  const fullText = `Selamat Ulang Tahun buat ${name}!`
+  const fullText = `Selamat Ulang Tahun Bebbb kuuu!`
 
   useEffect(() => {
     if (!visible) return
@@ -113,23 +113,29 @@ export function BirthdayScreen({ visible, name }: BirthdayScreenProps) {
         }`}
       >
         <p className="text-lg leading-relaxed text-foreground/80 md:text-xl">
-          Semoga semua impian dan harapanmu terwujud. Terima kasih sudah menjadi orang yang luar biasa. Semoga tahun ini penuh kebahagiaan!
+         Selamat ulang tahun cantik😘🎂
+Semoga sehat selalu, diberkati Tuhan, Panjang umur, segala rencananya lancar, impiannya tercapai, semangat terusss dan semakin baik hehehehe
+Semoga setiap kau bertambah umur kita masih sahabatan yah🙂‍↔️
+Tetap jadi setia yang ku kenal yah beb ku😍 jangan berubah eak
+Kalo ada masalah cerita ke aku beb, walaupun gak bisa bantu tapi aku bakal jadi pendengar yang baik buat mu.
+Apa pun yang terjadi, apa pun keburukan mu aku bakal tetap jadi rumah untuk mu pulang🫂
+I love love love love love love love love love love love love love love love love love love love love you so bad beb ku
+Bela...
         </p>
         <p className="mt-4 text-2xl" role="img" aria-label="hearts">
 {"\ud83d\udc96\u2728\ud83d\udc96"}
         </p>
       </div>
 
-     {/* YouTube autoplay background music (muted by browser policy) */}
-<iframe
+   <iframe
+  id="yt-auto"
   title="Just The Way You Are - Bruno Mars"
-  width="0"
-  height="0"
-  className="hidden"
+  width="1"
+  height="1"
+  style={{ opacity: 0, position: "absolute", pointerEvents: "none" }}
   allow="autoplay; encrypted-media"
-  src="https://www.youtube.com/embed/LjhCEhWiKXk?autoplay=1&mute=1&loop=1&playlist=LjhCEhWiKXk&controls=0"
+  src="https://www.youtube.com/embed/LjhCEhWiKXk?autoplay=1&mute=1&loop=1&playlist=LjhCEhWiKXk"
 />
-
     </div>
   )
 }
